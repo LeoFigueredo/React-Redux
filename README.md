@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+### DEPLOY: https://app.netlify.com/sites/thirsty-cori-7bf05b/overview
+
 ## Available Scripts
 
 In the project directory, you can run:
