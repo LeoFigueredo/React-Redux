@@ -125,7 +125,7 @@ const submitNuevaCita = e => {
                     </div>
                     <div className="form-group row justify-content-end">
                         <div className="col-sm-3">
-                            <button type="submit" className="btn btn-success w-100">Agregar</button>
+                            <button type="submit" className="btn btn-success ">Agregar</button>
                         </div>
                     </div>
                 </form>
