@@ -9,13 +9,24 @@ const [fecha, guardarFecha] = useState('');
 const [hora, guardarHora] = useState('');
 const [sintomas, guardarSintomas] = useState('');
 
+//cuando el formulario es enviado
+const submitNuevaCita = e => {
+    e.preventDefault();
+
+    //validar el formulario
+
+    //crear la nueva cita
+
+    //reiniciar el formulario 
+}
+
 
 
     return (
         <div className="card mt-5">
             <div className="card-body">
                 <h2 className="card-title text-center mb-5">Agrega las citas aqui</h2>
-                <form>
+                <form onSubmit={submitNuevaCita}>
                     <div className="form-group row">
                         <label className="col-sm-4 col-lg-2 col-form-label">Nombre Mascota</label>
                         <div className="col-sm-8 col-lg-10">
