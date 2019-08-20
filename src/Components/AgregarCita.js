@@ -1,6 +1,7 @@
 import React, { useState }from 'react';
 import { useDispatch } from 'react-redux';
 import { agregarCitaAction } from '../actions/citasActions'; 
+import {validarFormularioAction} from '../actions/validatorActions'; 
 import uuid from 'uuid/v4'; 
 const AgregarCita = () => {
    
@@ -13,12 +14,24 @@ const [sintomas, guardarSintomas] = useState('');
 
 //dispatch para ejecutar las acciones. 
 const dispatch = useDispatch(); 
-const agregarNuevaCita = (cita) => dispatch( agregarCitaAction(cita) )
+const agregarNuevaCita = (cita) => dispatch( agregarCitaAction(cita) );
+const validarFormulario = (estado) => dispatch( validarFormularioAction(estado)); 
 //cuando el formulario es enviado
 const submitNuevaCita = e => {
     e.preventDefault();
 
     //validar el formulario
+    if (mascota.trim() === '' ||
+        fecha.trim() === '' ||
+        hora.trim() === '' ||
+        sintomas.trim() === '')
+    {
+        validarFormulario(true);
+        return;
+
+    }
+    validarFormulario(false);
+
 
     //crear la nueva cita
     agregarNuevaCita({
