@@ -1,12 +1,14 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-
+import { useSelector, useDispatch } from 'react-redux';
+import { borrarCitaAction } from '../actions/citasActions';
 const ListadoCitas = () => {
 
     const citas = useSelector ((state) => state.citas);
     const mensaje = Object.keys(citas.citas).length === 0 ? 'No hay citas' : 'Administra las citas aquí';
     
 
+//Dispatch para llamar la acción de eliminar.     
+const dispatch = useDispatch();
     return (
         <div className="card mt-5">
             <div className="card-body">
@@ -20,8 +22,7 @@ const ListadoCitas = () => {
                             <p className="card-text"><span>Fecha:</span>{cita.fecha}</p>
                             <p className="card-text"><span>Hora:</span>{cita.hora}</p>
                             <p className="card-text"><span>Sintomas:</span> <br /> {cita.sintomas}</p>
-                            <button 
-                                className="btn btn-danger">Borrar &times;
+                            <button className="btn btn-danger"  onClick={() => dispatch(borrarCitaAction(cita.id))}>Borrar &times;
                             </button>
                         </div>
                     </div>
